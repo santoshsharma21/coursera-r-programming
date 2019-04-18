@@ -1,3 +1,5 @@
+# Finding the best hospital in state based on outcome
+
 best <- function(state, outcome){
     # read data
     data = read.csv("A:/coursera-r-programming/Hospital-quality/outcome-of-care-measures.csv", 
@@ -37,6 +39,5 @@ best <- function(state, outcome){
         sorted_df = df[order(df[,'pneumonia'],df[,'hospital_name']),]
         best_hospital = sorted_df[,'hospital_name'][1]
     }
-    
     return(best_hospital)
 }
