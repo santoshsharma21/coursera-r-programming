@@ -3,7 +3,6 @@ rankall <- function(outcome, num = 'best'){
     # read data
     data = read.csv("A:/coursera-r-programming/Hospital-quality/outcome-of-care-measures.csv", 
                     na.strings = "Not Available", stringsAsFactors = FALSE)
-    
     # Filter unnecessary data 
     data <- data[,c(2,7,11,17,23)]
     
@@ -38,12 +37,7 @@ rankall <- function(outcome, num = 'best'){
             rankall_df[i,'state'] = States[i]
         }
     }
-    
-   # add row names & return data frame
+    # add row names & return data frame
     row.names(rankall_df) = States
     return(rankall_df)
 }
-
-head(rankall('heart attack',20),10)
-
-
